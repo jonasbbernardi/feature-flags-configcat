@@ -1,0 +1,32 @@
+{
+  "name": "feature-flags",
+  "private": true,
+  "version": "0.0.1",
+  "description": "PoC demonstrating feature flags usage with ConfigCat SDK",
+  "main": "index.js",
+  "workspaces": [
+    "back",
+    "front"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "scripts": {
+    "start:dev": "concurrently -n back,front -c green,cyan \"npm run start:dev --workspace back\" \"npm run start:dev --workspace front\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jonasbbernardi/feature-flags-configcat.git"
+  },
+  "keywords": [
+    "featureflag",
+    "featuretoggle",
+    "configcat"
+  ],
+  "author": "jonasbbernardi@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonasbbernardi/feature-flags-configcat/issues"
+  },
+  "homepage": "https://github.com/jonasbbernardi/feature-flags-configcat#readme"
+}
