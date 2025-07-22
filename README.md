@@ -50,7 +50,9 @@ Backend have thre flags:
 
 Main project use workspace to handle dependencies, so run install on root folder.
 
-IMPORTANT: Node version must be **> 22**.
+**!IMPORTANT!**
+
+Node version must be **> 22**.
 
 ```bash
 npm install
@@ -84,7 +86,9 @@ To run frontend or backend separately, go to desired folder and run command.
 
 It's possible to run trought docker, exposing ports as env file and using `.env` as environment variables file with commands:
 
-!IMPORTANT! Remove double quotes and comments (with "#") after variable values from .env if using docker.
+**!IMPORTANT!**
+
+Remove double quotes and comments (with "#") after variable values from .env if using docker.
 
 ```bash
   docker build -t feature-flags .
