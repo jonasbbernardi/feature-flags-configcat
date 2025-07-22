@@ -11,7 +11,7 @@ if (fs.existsSync(localEnvPath)) {
 } else if (fs.existsSync(rootEnvPath)) {
   dotenv.config({ path: rootEnvPath });
 } else {
-  throw new Error("No .env file found in either back/ or project root.");
+  dotenv.config();
 }
 
 const sdkKey = process.env.CONFIGCAT_SDK_KEY;
@@ -20,7 +20,6 @@ const cacheTimeToLiveSeconds = +(process.env.CONFIGCAT_LAZYLOAD_TTL || "");
 if (!sdkKey) {
   throw new Error("CONFIGCAT_SDK_KEY is not defined in .env");
 }
-console.log(cacheTimeToLiveSeconds);
 
 export const configCatClient = getClient(sdkKey, PollingMode.LazyLoad, {
   cacheTimeToLiveSeconds
