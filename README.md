@@ -50,6 +50,8 @@ Backend have thre flags:
 
 Main project use workspace to handle dependencies, so run install on root folder.
 
+IMPORTANT: Node version must be **> 22**.
+
 ```bash
 npm install
 ```
@@ -77,6 +79,19 @@ Projects are configurated to run with `npm run start:dev` command.
 To run all together, use command on root folder.
 
 To run frontend or backend separately, go to desired folder and run command.
+
+### Docker
+
+It's possible to run trought docker, exposing ports as env file and using `.env` as environment variables file with commands:
+
+!IMPORTANT! Remove double quotes and comments (with "#") after variable values from .env if using docker.
+
+```bash
+  docker build -t feature-flags .
+  docker run --rm --name feature-flags -p 8000:8000 -p 9000:9000 --env-file .env feature-flags
+```
+
+Current image size: 290.02Mb.
 
 ## References
 
