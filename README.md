@@ -92,7 +92,14 @@ Remove double quotes and comments (with "#") after variable values from .env if 
 
 ```bash
   docker build -t feature-flags .
-  docker run --rm --name feature-flags -p 8000:8000 -p 9000:9000 --env-file .env feature-flags
+  docker run --rm -d --name feature-flags -p 8000:8000 -p 9000:9000 --env-file .env feature-flags
+```
+
+To demonstrate environments, set ports on .env to X001 and run second container:
+
+```bash
+  docker build -t feature-flags1 .
+  docker run --rm -d --name feature-flags1 -p 8001:8001 -p 9001:9001 --env-file .env feature-flags1
 ```
 
 Current image size: 290.02Mb.
